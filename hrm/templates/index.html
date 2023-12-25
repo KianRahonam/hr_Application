@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login & Signup Page</title>
+  <title>Login Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    }
+
+    .navbar {
+      background-color: cadetblue;
+      overflow: hidden;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .menu {
+      text-decoration: none;
+      color: white;
+      font-size: 0.9em;
+      margin: 0 15px;
     }
 
     .container {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: center;
+    background-color: gainsboro;
+      padding: 100px;
     }
 
     h2 {
@@ -59,19 +65,13 @@
     button:hover {
       background-color: #45a049;
     }
-
-    .signup-link {
-      margin-top: 15px;
-      color: #007bff;
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
-
-  <div class="container">
+<div style="float:Right; height:370px;" class="container">
     <h2>Login</h2>
-    <form action="login.php" method="post">
+    <form action="loginUser" method="post">
+        {% csrf_token %}
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
 
@@ -80,9 +80,17 @@
 
       <button type="submit">Login</button>
     </form>
-
-    <a href="#" class="signup-link">Don't have an account? Sign up</a>
   </div>
+  <div style="float:Right width:50%; background-color:white;" class="container">
+   <h1>Welcome</h1>
+    <p>Hi Guest,
+    Welcome to our HR Administrative site you can use our site for create employee profile and for sending offer letters / documents to the candidates
+    </p>
+        <p>1) Offer Letter Automation</p>
+        <p>2) Payroll Management</p>
+        <p>2) Contract Management</p>
+        <p>2) Offer Confirmations</p>
 
+  </div>
 </body>
 </html>

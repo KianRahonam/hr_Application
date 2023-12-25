@@ -1,8 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://getbootstrap.com/docs/4.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
   <style>
     body {
       margin: 0;
@@ -10,11 +14,15 @@
     }
 
     .navbar {
-      background-color: white;
+      background-color: cadetblue;
       overflow: hidden;
       color: white;
       padding: 15px;
       text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
     .navbar-left {
@@ -43,7 +51,8 @@
       margin: 0 15px;
       text-decoration: none;
       color: black;
-      font-size: 1 em;
+      font-size: 0.8em;
+
     }
 
     .login-btn, .logout-btn {
@@ -72,21 +81,20 @@
 
   <div class="navbar">
     <div class="navbar-left">
-      <img src="logo.png" alt="Logo">
-        <img src="logo1.png" alt="Logo">
+      <img src="{% static 'logo.png' %}" alt="Logo">
+      <img src="{% static 'logo1.png' %}" alt="Logo">
 <!--      <span>Sambhav & LabourNet</span>-->
     </div>
 
     <div class="navbar-right">
-      <a href="#" class="menu">Home</a>
-      <a href="#" class="menu">Offer Candidate</a>
-      <a href="#" class="menu">Confirmation</a>
-      <a href="#" class="menu">Candidate Data Base</a>
+      <a href="/main" class="menu">Home</a>
+      <a href="/createofferpage" class="menu">Offer Candidate</a>
+<!--      <a href="#" class="menu">Confirmation</a>-->
+      <a href="/candidatedetials" class="menu">Offer Letter Base</a>
       <a href="#" class="menu">Terms & Conditions</a>
 
       <!-- Replace "#" with the actual login and logout URLs -->
-      <button class="login-btn">Login</button>
-      <button class="logout-btn">Logout</button>
+      <a href="/"><button type="button" class="btn-sm btn-warning">Logout</button></a>
     </div>
   </div>
 

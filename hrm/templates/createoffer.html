@@ -1,110 +1,87 @@
-
 {% include 'navbar.html' %}
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+<html>
+<header>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
 
-    .navbar {
-      background-color: cadetblue;
-      overflow: hidden;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-
-
+    label{
+          color: maroon;
+          font-size: small
+         }
+  fieldset{
+          padding-left:100px;
+          margin:20px;
+          border-color:red;
+          }
+    textarea, input,select,option{
+        width:300px;
+        width: 300px;
+        font-size: smaller;
+        }
     .container {
-    background-color: gainsboro;
-      padding: 100px;
+      background-color: gainsboro;
+      padding-top:50px;
+      padding-bottom:50px;
     }
 
-    h2 {
-      color: #333;
-    }
+    button{
+    width:2cm;
+    background-color: cadetblue;
+    border: #04AA6D;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;}
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      margin-bottom: 8px;
-      color: #555;
-    }
-
-    input {
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    input[type=text], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      color: black;
-}
-
-    button {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
   </style>
-</head>
+</header>
 <body>
+<div class="container">
+<fieldset>
+  <h5>Create Offer</h5>
+<form method="post" action="/createoffer">
+  <br><label for="candidatename">Candiate Name</label><br>
+  <input type="text" id="candidatename" name="candidatename"><br>
 
+  <label for="offredcompany">Company</label><br>
+  <select id="offredcompany" name="offredcompany">
+    <option name="LabourNet">LabourNet</option>
+    <option name="=Sambhav">Sambhav</option>
+  </select><br>
 
-<div style="float:Right; height:370px;" class="container">
-    <h2>Offer Candidate</h2>
-  <form action="/action_page.php">
-    <label for="candidatename">Candate Name</label>
-    <input type="text" id="candidatename" name="candidatename">
+  <label for="employmenttype">Employeement Type</label><br>
+  <select id="employmenttype" name="employmenttype">
+    <option>Full Time</option>
+    <option>Contract</option>
+  </select><br>
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  <label for="offerdate">Offred Date</label><br>
+  <input type="date" id="offerdate" name="offerdate"><br>
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
+  <label for="address">Full Address</label><br>
+  <textarea id="address" name="address"></textarea><br>
 
-    <input type="submit" value="Submit">
-  </form>
+  <label for="location">Work Location</label><br>
+  <input type="text" id="location" name="location"><br>
+
+  <label for="projectname">Project Name</label><br>
+  <input type="text" id="projectname" name="projectname"><br>
+
+  <label for="designation">Designation</label><br>
+  <input type="text" id="designation" name="designation"><br>
+
+  <label for="salary">Salary Offered(CTC)</label><br>
+  <input type="text" id="salary" name="salary"><br>
+
+  <label for="reporting">Reporting To</label><br>
+  <input type="text" id="reporting" name="reporting"><br>
+
+  <label for="joining">Offered Date:</label><br>
+  <input type="date" id="joining" name="joining"><br><br>
+  <button>Create</button> <button>Back</button>
+</form>
+
+</fieldset>
 </div>
-  <div style="float:Right width:50%; background-color:white;" class="container">
-   <h1>Welcome</h1>
-    <p>Hi Guest,
-    Welcome to our HR Administrative site you can use our site for create employee profile and for sending offer letters / documents to the candidates
-    </p>
-        <p>1) Offer Letter Automation</p>
-        <p>2) Payroll Management</p>
-        <p>2) Contract Management</p>
-        <p>2) Offer Confirmations</p>
-
-  </div>
 </body>
 </html>
