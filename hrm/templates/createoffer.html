@@ -2,10 +2,24 @@
 <html>
 <header>
   <style>
-
+form{
+  width: 40%;
+}
+  .block{
+    margin: 8px 10px;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* height: 500px; */
+  }
     label{
-          color: maroon;
-          font-size: small
+          color: rgb(0, 0, 0);
+          font-size: 1.01rem;
+          margin:10px 0;
+          font-family: poppins;
+          padding: 10px 0;
          }
   fieldset{
           padding-left:100px;
@@ -16,71 +30,144 @@
         width:300px;
         width: 300px;
         font-size: smaller;
+        
         }
+        select, option{
+          padding: 7px 5px;
+          /* width: 50%; */
+        }
+input{
+    font-size: 16px;
+    /* line-height: 28px; */
+    padding: 7px 20px;
+    /* width: 50%; */
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+    textarea {
+      /* width: 50%; */
+      height: 100px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      resize: none;
+  }
+
     .container {
       background-color: gainsboro;
       padding-top:50px;
       padding-bottom:50px;
     }
+    .form-container{
+      display: flex;
+      
+    }
 
     button{
-    width:2cm;
-    background-color: cadetblue;
-    border: #04AA6D;
-    color: white;
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;}
+    font-style: normal;
+    width: 25%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+	  margin: 0 25px;
+    cursor: pointer;
 
+  }
+  .block-btn{
+    display: flex;
+  }
   </style>
 </header>
 <body>
 <div class="container">
 <fieldset>
-  <h5>Create Offer</h5>
+  <center><h5 style="font-family: poppins;">Create Offer</h5></center>
+  <div class="form-container">
 <form method="post" action="/createoffer">
-  <br><label for="candidatename">Candiate Name</label><br>
-  <input type="text" id="candidatename" name="candidatename"><br>
+  <br>
+  <div class="block">
+    <label for="candidatename">Candiate Name</label><br>
+  <input type="text" id="candidatename" name="candidatename">
+  </div>
 
-  <label for="offredcompany">Company</label><br>
+  <div class="block">
+    <label for="offredcompany">Company</label><br>
   <select id="offredcompany" name="offredcompany">
     <option name="LabourNet">LabourNet</option>
     <option name="=Sambhav">Sambhav</option>
-  </select><br>
+  </select>
+  </div>
 
-  <label for="employmenttype">Employeement Type</label><br>
+  <div class="block">
+    <label for="employmenttype">Employeement Type</label><br>
   <select id="employmenttype" name="employmenttype">
     <option>Full Time</option>
     <option>Contract</option>
-  </select><br>
+  </select>
+  </div>
 
+ <div class="block">
   <label for="offerdate">Offred Date</label><br>
-  <input type="date" id="offerdate" name="offerdate"><br>
+  <input type="date" id="offerdate" name="offerdate">
+ </div>
 
+ <div class="block">
   <label for="address">Full Address</label><br>
   <textarea id="address" name="address"></textarea><br>
+ </div>
 
-  <label for="location">Work Location</label><br>
+  <div class="block">
+    <br><label for="location">Work Location</label><br>
   <input type="text" id="location" name="location"><br>
+  </div>
 
-  <label for="projectname">Project Name</label><br>
+  <div class="block">
+    <label for="projectname">Project Name</label><br>
   <input type="text" id="projectname" name="projectname"><br>
+  </div>
 
-  <label for="designation">Designation</label><br>
+  <div class="block">
+    <label for="designation">Designation</label><br>
   <input type="text" id="designation" name="designation"><br>
+  </div>
 
-  <label for="salary">Salary Offered(CTC)</label><br>
+  <div class="block">
+    <label for="salary">Salary Offered(CTC)</label><br>
   <input type="text" id="salary" name="salary"><br>
+  </div>
 
-  <label for="reporting">Reporting To</label><br>
+  <div class="block">
+    <label for="reporting">Reporting To</label><br>
   <input type="text" id="reporting" name="reporting"><br>
+  </div>
 
-  <label for="joining">Offered Date:</label><br>
+  <div class="block">
+    <br><br><label for="joining">Offered Date:</label><br>
   <input type="date" id="joining" name="joining"><br><br>
-  <button>Create</button> <button>Back</button>
+  </div>
+  <div class="block-btn">
+    <button>Create</button>  <button>Back</button>
+  </div>
 </form>
-
+</div>
 </fieldset>
 </div>
 </body>
