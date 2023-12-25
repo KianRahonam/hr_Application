@@ -1,7 +1,39 @@
 {% include 'navbar.html' %}
 <html>
+    <title></title>
+    <head>
 <style>
-  th {
+    .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    color: #0ea98a;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+  /* th {
   font-size: 12px;
     font-family: sans-serif;
     font-optical-sizing: auto;
@@ -25,7 +57,7 @@ padding:3px;
       padding-top:100px;
       padding-bottom:100px;
 
-    }
+    } */
 
     button{
     width:1.5cm;
@@ -35,15 +67,29 @@ padding:3px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-radius: 5px;}
+    border-radius: 3px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+button:first-child{
+    border: 1px solid black;
+    background-color: green;
+}
+button:last-child{
+    border: 1px solid black;
+    background-color: rgb(33, 178, 236);
+}
 
 </style>
-
+</head>
+<body>
+    
 <div class="container">
     <h6 style="padding-left:2.5cm; font-weight:bold;">Offer Letters</h6>
 <center>
 
-    <table border="1" style="border: 1px solid;" >
+    <table class="styled-table" >
+        <thead>
             <th>Offer ID</th>
             <th>Offer Date</th>
             <th>Candidate Name</th>
@@ -55,7 +101,9 @@ padding:3px;
             <th>Work Location</th>
             <th>Salary</th>
             <th>Action</th>
+        </thead>
         </tr>
+        <tbody>
         <tr>
             <td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td><button>Print</button> <button>Send</button></td>
         </tr><tr>
@@ -63,6 +111,8 @@ padding:3px;
         </tr><tr>
             <td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td><button>Print</button> <button>Send</button></td>
         </tr>
+    </tbody>
     </table></center>
 </div>
+</body>
 </html>
