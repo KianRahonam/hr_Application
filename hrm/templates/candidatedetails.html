@@ -1,6 +1,6 @@
 {% include 'navbar.html' %}
 <html>
-    <title></title>
+    <title>Offer Letters</title>
     <head>
 <style>
 .styled-table {
@@ -84,33 +84,36 @@ button:last-child{
 </head>
 <body>
     
-<div class="container">
-    <h6 style="padding-left:2.5cm; font-weight:bold;">Offer Letters</h6>
-<center>
+<div class="container" style="padding-top:70px;">
 
+    <h6 style="font-weight:bold;">Offer Letters</h6>
+<center>
     <table class="styled-table" >
+
         <thead>
             <th>Offer ID</th>
             <th>Offer Date</th>
             <th>Candidate Name</th>
-            <th>Candidate Phone</th>
-            <th>Candidate Email ID</th>
             <th>Candidate Address</th>
             <th>Reporting to</th>
             <th>Designation</th>
             <th>Work Location</th>
-            <th>Salary</th>
             <th>Action</th>
         </thead>
         </tr>
         <tbody>
+        {% for i in data %}
         <tr>
-            <td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td><button>Print</button> <button>Send</button></td>
-        </tr><tr>
-            <td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td><button>Print</button> <button>Send</button></td>
-        </tr><tr>
-            <td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td>2121</td><td><button>Print</button> <button>Send</button></td>
+            <td>{{i.candidateid}}</td>
+            <td>{{i.offerdate}}</td>
+            <td>{{i.candidatename}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.reporting}}</td>
+            <td>{{i.designation}}</td>
+            <td>{{i.location}}</td>
+            <td><button>Print</button><button>Send</button></td>
         </tr>
+        {% endfor %}
     </tbody>
     </table></center>
 </div>
